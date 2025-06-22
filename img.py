@@ -29,8 +29,8 @@ def run_img(src: str, url: str, img_path: str, res: int, preprocess=img_preproce
     out = cv2.cvtColor(np.ndarray.astype(out[0].numpy() * 255, np.uint8), cv2.COLOR_RGB2BGR)
     if write_out:
         cv2.imwrite("out.jpg", out)
-    cv2.imshow("Output", out)
-    cv2.waitKey(10000)
+    # cv2.imshow("Output", out)
+    # cv2.waitKey(10000)
 
 
 if __name__ == "__main__":
