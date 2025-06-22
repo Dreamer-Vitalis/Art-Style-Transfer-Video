@@ -34,8 +34,8 @@ def run_video(src: Union[str, int], url: str, img_path: str, res: int, skip_fram
 
             if write_out:
                 video.write(out)
-            cv2.imshow("Output", out)
-            cv2.waitKey(1)
+            # cv2.imshow("Output", out)
+            # cv2.waitKey(1)
         i += 1
 
     if write_out:
