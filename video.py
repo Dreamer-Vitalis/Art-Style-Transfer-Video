@@ -5,6 +5,7 @@ from typing import Union
 import os
 import argparse
 import tensorflow as tf
+from typing import Tuple
 
 def run_video(src: Union[str, int], url: str, img_path: str, res: int, skip_frames: int = 1, write_out: bool = False):
     if type(src) == str and not os.path.isfile(src):

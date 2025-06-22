@@ -4,6 +4,7 @@ import numpy as np
 import functools
 import matplotlib.pyplot as plt
 import cv2
+from typing import Tuple
 
 tf.config.run_functions_eagerly(False)
 
@@ -50,7 +51,7 @@ def crop_center(image):
 
 
 @functools.lru_cache(maxsize=None)
-def load_image(image_path: str, image_size: tuple[int, int] = (256, 256), preserve_aspect_ratio: bool = True):
+def load_image(image_path: str, image_size: Tuple[int, int] = (256, 256), preserve_aspect_ratio: bool = True):
     """Loads and preprocesses images."""
     # Load and convert to float32 numpy array, add batch dimension, and normalize to range [0, 1].
     img = plt.imread(image_path).astype(np.float32)[np.newaxis, ...]
