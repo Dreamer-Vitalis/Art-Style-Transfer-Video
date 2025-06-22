@@ -24,6 +24,8 @@ def run_video(src: Union[str, int], url: str, img_path: str, res: int, skip_fram
 
     while cap.isOpened():
         status, img = cap.read()
+        if not status:
+            break  # 没有帧可读，退出循环
         if i % skip_frames == 0:
             i = 0
             img = cv2.cvtColor(resize(img, res), cv2.COLOR_BGR2RGB) / 255
